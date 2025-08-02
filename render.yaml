@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: obrixia-backend-1
+    env: python
+    buildCommand: ""
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
+    plan: free
+    envVars:
+      - key: STRIPE_SECRET_KEY
+        value: your_stripe_secret_key
+      - key: STRIPE_SIGNING_SECRET
+        value: your_signing_secret
